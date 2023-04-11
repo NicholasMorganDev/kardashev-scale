@@ -22,11 +22,16 @@ h1,h2,h3 {
 h1 {
   display: flex;
   justify-content: center;
-  font-size: 60px;
+  font-size: clamp(35px, 4vw, 80px);
 }
 
 h2 {
-  font-size: 30px;
+  font-size: clamp(30px, 4vw, 50px);
+}
+
+h3 {
+  font-size: clamp(25px, 4vw, 35px);
+  text-align: center;
 }
 
 h2.custom-h2 {
@@ -41,6 +46,7 @@ main, section, footer {
 p {
   font-size: 20px;
   font-family: 'Space Mono', monospace;
+  font-size: clamp(17px, 4vw, 23px);
 }
 
 a:link,
@@ -63,6 +69,21 @@ section.container figure {
   margin: 0;
   padding: 0;
   margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+  section.container {
+    flex-direction: column;
+  }
+
+  section.container div {
+    width: 100%;
+    margin-bottom: 130px;
+  }
+
+  section.container figure img:hover {
+    transform: scale(1);
+  }
 }
 
 section.container div {
@@ -93,4 +114,9 @@ footer {
 
 img {
   width: 300px;
+}
+
+.bucket {
+  display: flex;
+  justify-content: center;
 }
